@@ -312,21 +312,6 @@ input[type=range]::-moz-range-thumb{width:19px;height:19px;border-radius:50%;bac
 .tl-body li::before{content:'';position:absolute;left:0;top:8px;width:6px;height:6px;border-radius:50%;background:var(--cyan);opacity:.55}
 @media(max-width:640px){.tl-item{grid-template-columns:1fr;gap:10px}}
 
-/* ── Timezone strip ────────────────────────────────────────────────────────── */
-.tz-wrap{background:var(--card);border:1px solid var(--rule);border-radius:20px;overflow:hidden}
-.tz-grid{display:grid;grid-template-columns:repeat(4,1fr)}
-@media(max-width:760px){.tz-grid{grid-template-columns:repeat(2,1fr)}}
-.tz{padding:26px 22px;border-right:1px solid var(--rule);text-align:center;transition:background .3s}
-.tz:last-child{border-right:0}
-.tz.good{background:rgba(222,240,137,.22)}
-.tz .city{font-size:.72rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-50);margin-bottom:11px}
-.tz .clock{font-size:1.75rem;font-weight:500;letter-spacing:-.035em;font-variant-numeric:tabular-nums;line-height:1;margin-bottom:9px}
-.tz .who{font-size:.76rem;color:var(--ink-50);line-height:1.4}
-.tz .state{margin-top:11px;display:inline-block;font-size:.66rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--paper-warm);color:var(--ink-50);border:1px solid var(--rule)}
-.tz.good .state{background:var(--grass);color:#31460B;border-color:transparent}
-@media(max-width:760px){.tz:nth-child(2){border-right:0}.tz:nth-child(-n+2){border-bottom:1px solid var(--rule)}}
-.tz-foot{padding:16px 22px;border-top:1px solid var(--rule);background:var(--paper-warm);font-size:.82rem;color:var(--ink-75);text-align:center;line-height:1.5}
-.tz-foot b{color:var(--ink);font-weight:600}
 
 /* ── Gap / honesty block ───────────────────────────────────────────────────── */
 .gapbox{background:var(--paper-warm);border:1px solid var(--rule);border-radius:20px;padding:38px 40px;position:relative}
@@ -779,21 +764,6 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
   </div>
 </section>
 
-<!-- ══ THE CALL ══ -->
-<section id="thecall" class="sec-tight">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <span class="eyebrow">Next step</span>
-      <h2>One call, four time zones, morning UK.</h2>
-      <p class="lead">You flagged the people who need to be in the room: your Head of Marketing in Barcelona, Head of Growth in Thailand, and Min in Hong Kong. Here's the window that works for all of them without anyone taking a call at midnight.</p>
-    </div>
-    <div class="tz-wrap reveal d1">
-      <div class="tz-grid" id="tzgrid"></div>
-      <div class="tz-foot">Recommended slot: <b>09:00 London</b> &middot; 10:00 Barcelona &middot; 15:00 Bangkok &middot; 16:00 Hong Kong. Online, 30 minutes, your questions against a live workspace.</div>
-    </div>
-  </div>
-</section>
-
 <!-- ══ BEYOND ══ -->
 <section class="sec">
   <div class="wrap">
@@ -992,25 +962,6 @@ function calc(){
 }
 Object.values(S).forEach(id=>document.getElementById(id).addEventListener('input',calc));
 calc();
-
-/* ═══ TIME ZONES ═══ */
-const ZONES=[
- {c:'London',tz:'Europe/London',w:'Camilla · Brand & Design'},
- {c:'Barcelona',tz:'Europe/Madrid',w:'Head of Marketing'},
- {c:'Bangkok',tz:'Asia/Bangkok',w:'Head of Growth'},
- {c:'Hong Kong',tz:'Asia/Hong_Kong',w:'Min · COO'}
-];
-const tzg=document.getElementById('tzgrid');
-function tick(){
-  tzg.innerHTML=ZONES.map(z=>{
-    const now=new Date();
-    const t=new Intl.DateTimeFormat('en-GB',{timeZone:z.tz,hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
-    const h=+new Intl.DateTimeFormat('en-GB',{timeZone:z.tz,hour:'2-digit',hour12:false}).format(now);
-    const awake=h>=8&&h<20;
-    return '<div class="tz'+(awake?' good':'')+'"><div class="city">'+z.c+'</div><div class="clock">'+t+'</div><div class="who">'+z.w+'</div><div class="state">'+(awake?'Working hours':'Out of hours')+'</div></div>';
-  }).join('');
-}
-tick();setInterval(tick,30000);
 
 /* ═══ SCROLL ═══ */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}}),{threshold:.12,rootMargin:'0px 0px -60px 0px'});
