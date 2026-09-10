@@ -336,6 +336,27 @@ input[type=range]::-moz-range-thumb{width:19px;height:19px;border-radius:50%;bac
 .price-list li{display:flex;gap:11px;align-items:flex-start;font-size:.91rem;color:rgba(250,250,250,.78);line-height:1.55}
 .price-list li svg{flex-shrink:0;margin-top:3px}
 .price-list li b{color:var(--paper);font-weight:600}
+.stage{display:inline-flex;align-items:center;gap:8px;font-size:.66rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:13px}
+.stage.s1{color:rgba(250,250,250,.42)}
+.stage.s2{color:var(--cyan-dark)}
+.stage i{width:5px;height:5px;border-radius:50%;background:currentColor;font-style:normal;flex-shrink:0}
+.then{display:flex;align-items:center;gap:16px;margin:20px 0;padding:0 6px}
+.then span{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-25);flex-shrink:0}
+.then em{flex:1;height:1px;background:var(--rule);font-style:normal}
+.plan2{background:var(--card);border:1px solid var(--rule);border-radius:24px;padding:44px 46px;position:relative;overflow:hidden;box-shadow:0 1px 2px rgba(17,18,19,.03),0 14px 40px rgba(17,18,19,.045)}
+.plan2::after{content:'';position:absolute;left:0;top:34px;bottom:34px;width:3px;background:linear-gradient(180deg,var(--cyan),var(--cyan-light));border-radius:0 3px 3px 0}
+.plan2 h3{color:var(--ink);margin-bottom:11px}
+.plan2 .price-top{border-bottom-color:var(--rule)}
+.plan2 .price-top p{color:var(--ink-75)}
+.plan2 .price-tag .amt{color:var(--ink)}
+.plan2 .price-tag .per{color:var(--ink-50)}
+.plan2 .price-list li{color:var(--ink-75)}
+.plan2 .price-list li b{color:var(--ink)}
+.plan-foot{margin-top:28px;padding-top:20px;border-top:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+.plan-foot p{font-size:.83rem;color:var(--ink-50);line-height:1.5;margin:0}
+.plan-foot .yr{font-size:.83rem;color:var(--ink-75);white-space:nowrap}
+.plan-foot .yr b{color:var(--ink);font-weight:600}
+@media(max-width:640px){.plan2{padding:32px 26px}}
 
 /* ── CTA ───────────────────────────────────────────────────────────────────── */
 #cta{padding:112px 0;text-align:center;position:relative;overflow:hidden}
@@ -703,10 +724,12 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
     <div class="sec-head reveal">
       <span class="eyebrow">The proposal</span>
       <h2>Four weeks. Then you decide.</h2>
+      <p class="lead">Two stages, one rate. The pilot proves it on your own data with nothing to unwind if it doesn't land. The agreement that follows is the same &pound;1,500 a month &mdash; no renegotiation, no step-up, no setup fee waiting on the other side.</p>
     </div>
     <div class="price reveal d1">
       <div class="price-top">
         <div>
+          <span class="stage s1"><i></i>Stage one &middot; Weeks 1&ndash;4</span>
           <h3>Proof of concept</h3>
           <p>Your accounts, your data, your questions &mdash; running properly, not a sandbox. Long enough to survive a real month-end and a real leadership meeting.</p>
         </div>
@@ -723,6 +746,34 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
         <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#57D2EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>White-label available.</b> You almost certainly don't need it. It's there if the brand team wants it.</span></li>
         <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#57D2EE" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Walk away at week four.</b> No notice, no clawback, no conversation. Most pilots convert &mdash; which is exactly why we can offer that.</span></li>
       </ul>
+    </div>
+
+    <div class="then reveal d2"><em></em><span>Then, if it works</span><em></em></div>
+
+    <div class="plan2 reveal d2">
+      <div class="price-top">
+        <div>
+          <span class="stage s2"><i></i>Stage two &middot; Month 2 onwards</span>
+          <h3>12-month agreement</h3>
+          <p>Everything the pilot contains, plus the ongoing support that turns a working pilot into something six offices actually depend on.</p>
+        </div>
+        <div class="price-tag">
+          <div class="amt">&pound;1,500</div>
+          <div class="per">per month &middot; 12 months, paid monthly</div>
+        </div>
+      </div>
+      <ul class="price-list">
+        <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Everything in the pilot, unchanged.</b> Unlimited users, unlimited data, questions never metered. The pilot isn't a stripped-back version of this &mdash; it's the same product.</span></li>
+        <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>We keep the connectors working.</b> When Meta or TikTok changes an API, that stays our problem for the whole term rather than becoming your engineer's sprint.</span></li>
+        <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>New sources as they land.</b> Your warehouse when it ships, the Samsung channel if the partnership restarts, whatever the event programme ends up running on.</span></li>
+        <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Dashboards and automations that move with you.</b> As the questions change, the saved views and scheduled reports change with them &mdash; without a request going into a queue.</span></li>
+        <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Onboarding across all six offices.</b> New joiners in Hong Kong, Shanghai, Singapore, London, Barcelona or Thailand get set up without it becoming a project.</span></li>
+        <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Ongoing support for the full term.</b> Not a handover at go-live. We stay involved for the twelve months, not just the fortnight after signing.</span></li>
+      </ul>
+      <div class="plan-foot">
+        <p>The four-week pilot is billed separately &mdash; the twelve months begin after it. No setup fee, no rate change, nothing held back for the contract.</p>
+        <div class="yr"><b>&pound;18,000</b> across the year</div>
+      </div>
     </div>
 
     <div style="margin-top:52px" class="reveal d2">
