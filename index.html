@@ -133,6 +133,33 @@ h1 .ln:nth-child(2)>span{animation-delay:.22s}
 .s-lab{font-size:.79rem;color:var(--ink-50);line-height:1.45}
 @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--rule)}.stat:nth-child(odd){padding-left:0}.stat:nth-child(even){padding-left:26px}}
 
+/* ── Video ─────────────────────────────────────────────────────────────────── */
+#video{padding:76px 0 0}
+.vid-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:22px}
+.vid-head h3{font-size:1.5rem;font-weight:500;letter-spacing:-.03em;margin-bottom:7px}
+.vid-head p{font-size:.9rem;color:var(--ink-50);max-width:470px}
+.vid-meta{font-size:.75rem;color:var(--ink-25);letter-spacing:.06em;white-space:nowrap;flex-shrink:0}
+.vid-frame{position:relative;aspect-ratio:16/9;border-radius:20px;overflow:hidden;background:var(--ink);border:1px solid var(--rule);box-shadow:0 2px 4px rgba(17,18,19,.04),0 26px 70px rgba(17,18,19,.11)}
+.vid-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+
+/* ── Tools carousel ────────────────────────────────────────────────────────── */
+#tools{padding:76px 0 0;overflow:hidden}
+.tools-head{max-width:640px;margin-bottom:26px}
+.tools-head h3{font-size:1.5rem;font-weight:500;letter-spacing:-.03em;margin-bottom:8px}
+.tools-head p{font-size:.9rem;color:var(--ink-50)}
+.marquee{position:relative;overflow:hidden;padding:5px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
+.mq-track{display:flex;gap:10px;width:max-content;animation:mqScroll var(--dur,52s) linear infinite}
+.mq-track.rev{animation-direction:reverse}
+.marquee:hover .mq-track{animation-play-state:paused}
+@keyframes mqScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tool{display:inline-flex;align-items:center;gap:9px;flex-shrink:0;background:var(--card);border:1px solid var(--rule);border-radius:999px;padding:9px 17px;font-size:.85rem;font-weight:500;color:var(--ink-75);white-space:nowrap;transition:border-color .2s,color .2s}
+.tool:hover{border-color:var(--ink-25);color:var(--ink)}
+.tool i{width:7px;height:7px;border-radius:2px;flex-shrink:0;font-style:normal}
+.tools-foot{margin-top:24px;display:flex;align-items:flex-start;gap:11px;background:var(--paper-warm);border:1px solid var(--rule);border-radius:14px;padding:15px 17px}
+.tools-foot p{font-size:.85rem;color:var(--ink-75);line-height:1.6;margin:0}
+.tools-foot p b{color:var(--ink);font-weight:600}
+@media(prefers-reduced-motion:reduce){.mq-track{animation:none}.marquee{-webkit-mask-image:none;mask-image:none}.mq-track{flex-wrap:wrap;width:auto}}
+
 /* ── Note / letter ─────────────────────────────────────────────────────────── */
 .letter{background:var(--card);border:1px solid var(--rule);border-radius:20px;padding:46px 48px;position:relative;box-shadow:0 1px 2px rgba(17,18,19,.03),0 12px 34px rgba(17,18,19,.035)}
 .letter::before{content:'';position:absolute;left:0;top:26px;bottom:26px;width:3px;background:var(--canary);border-radius:0 3px 3px 0}
@@ -433,12 +460,48 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
 
 <div class="statband">
   <div class="stats">
-    <div class="stat reveal"><div class="s-num">6</div><div class="s-lab">locations: Hong Kong, Shanghai, Singapore, London, Barcelona, Thailand</div></div>
+    <div class="stat reveal"><div class="s-num">5</div><div class="s-lab">locations: Hong Kong, Shanghai, Singapore, London and Barcelona</div></div>
     <div class="stat reveal d1"><div class="s-num">3</div><div class="s-lab">audience lines running separately: B2B, education, consumer</div></div>
     <div class="stat reveal d2"><div class="s-num">15 yrs</div><div class="s-lab">of product history, and a new master brand sitting above it</div></div>
     <div class="stat reveal d3"><div class="s-num">4 wks</div><div class="s-lab">from first connection to answers in front of the leadership off-site</div></div>
   </div>
 </div>
+
+<!-- ══ VIDEO ══ -->
+<section id="video">
+  <div class="wrap">
+    <div class="vid-head reveal">
+      <div>
+        <span class="eyebrow" style="display:block;margin-bottom:11px">Ninety seconds</span>
+        <h3>What Milo actually is.</h3>
+        <p>The short version, in case anyone at the off-site hasn't seen it. No setup, no slides.</p>
+      </div>
+      <div class="vid-meta">1:29</div>
+    </div>
+    <div class="vid-frame reveal d1">
+      <iframe src="https://player.vimeo.com/video/1196983997?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Milo overview"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TOOLS ══ -->
+<section id="tools">
+  <div class="wrap">
+    <div class="tools-head reveal">
+      <span class="eyebrow" style="display:block;margin-bottom:11px">What it plugs into</span>
+      <h3>It connects to the tools you already run.</h3>
+      <p>Ad platforms, app stores, attribution, product analytics, billing, your warehouse. A sample of what we connect to, and we build any that are missing.</p>
+    </div>
+  </div>
+  <div class="marquee reveal d1" style="--dur:56s"><div class="mq-track" id="mq1"></div></div>
+  <div class="marquee reveal d1" style="--dur:68s;margin-top:10px"><div class="mq-track rev" id="mq2"></div></div>
+  <div class="wrap">
+    <div class="tools-foot reveal d2">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="6.4" stroke="#00B3DC" stroke-width="1.4"/><path d="M8 5.2v.1M8 7.4v3.4" stroke="#00B3DC" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <p>These are examples, not an audit of your stack. <b>Send me the list of tools across departments</b> and I'll mark up exactly which of them we connect on day one, and which we build for you during the pilot.</p>
+    </div>
+  </div>
+</section>
 
 <!-- ══ LETTER ══ -->
 <section class="sec">
@@ -483,8 +546,8 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
       </div>
       <div class="card reveal d2">
         <div class="c-num">03</div>
-        <h4>Built for six time zones</h4>
-        <p>Hong Kong, Shanghai, Singapore, London, Barcelona, Thailand. Nobody should wait for London to wake up to find out how Tuesday went. Milo answers at 3am in Bangkok as readily as 9am in Barcelona.</p>
+        <h4>Built for five locations</h4>
+        <p>Hong Kong, Shanghai, Singapore, London and Barcelona. Nobody should wait for London to wake up to find out how Tuesday went. Milo answers at 6am in Singapore as readily as 9am in Barcelona.</p>
       </div>
     </div>
   </div>
@@ -585,7 +648,7 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
         </div>
         <div class="pillar-bot">
           <div class="milo-side">With Milo</div>
-          <p>B2B, education and consumer stop keeping private versions of the truth. One workspace, six locations, shared dashboards, and the Barcelona answer is the same as the Hong Kong answer.</p>
+          <p>B2B, education and consumer stop keeping private versions of the truth. One workspace, five locations, shared dashboards, and the Barcelona answer is the same as the Hong Kong answer.</p>
         </div>
       </div>
       <div class="pillar reveal d3">
@@ -697,7 +760,7 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
         <div class="cmp-r"><div>Time to the first useful answer</div><div>6 to 12 months, assuming nothing gets deprioritised</div><div><b>Week one of four.</b> Connections in days, answers immediately after</div></div>
         <div class="cmp-r"><div>What happens when Meta changes its API</div><div>Your engineer stops what they're doing and fixes it</div><div><b>Our problem.</b> We build and maintain every connector from scratch</div></div>
         <div class="cmp-r"><div>Adding a new source: events, Samsung, the warehouse</div><div>Another sprint, another queue, another prioritisation call</div><div><b>Included.</b> New sources are how the product grows</div></div>
-        <div class="cmp-r"><div>Who can get an answer without help</div><div>Whoever writes SQL</div><div><b>Anyone who can type a question.</b> Six offices, three teams, one workspace</div></div>
+        <div class="cmp-r"><div>Who can get an answer without help</div><div>Whoever writes SQL</div><div><b>Anyone who can type a question.</b> Five offices, three teams, one workspace</div></div>
         <div class="cmp-r"><div>What your analytics team ends up doing</div><div>Maintaining a pipeline and servicing report requests</div><div><b>The work they were hired for.</b> They set it up faster than we could alone</div></div>
         <div class="cmp-r"><div>If it turns out not to be worth it</div><div>You've spent the year and the headcount</div><div><b>You stop after four weeks.</b> Nothing to unwind</div></div>
       </div>
@@ -755,7 +818,7 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
         <div>
           <span class="stage s2"><i></i>Stage two &middot; Month 2 onwards</span>
           <h3>12-month agreement</h3>
-          <p>Everything the pilot contains, plus the ongoing support that turns a working pilot into something six offices actually depend on.</p>
+          <p>Everything the pilot contains, plus the ongoing support that turns a working pilot into something five offices actually depend on.</p>
         </div>
         <div class="price-tag">
           <div class="amt">&pound;1,500</div>
@@ -767,7 +830,7 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
         <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>We keep the connectors working.</b> When Meta or TikTok changes an API, that stays our problem for the whole term rather than becoming your engineer's sprint.</span></li>
         <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>New sources as they land.</b> Your warehouse when it ships, the Samsung channel if the partnership restarts, whatever the event programme ends up running on.</span></li>
         <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Dashboards and automations that move with you.</b> As the questions change, the saved views and scheduled reports change with them, without a request going into a queue.</span></li>
-        <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Onboarding across all six offices.</b> New joiners in Hong Kong, Shanghai, Singapore, London, Barcelona or Thailand get set up without it becoming a project.</span></li>
+        <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Onboarding across all five offices.</b> New joiners in Hong Kong, Shanghai, Singapore, London or Barcelona get set up without it becoming a project.</span></li>
         <li><svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3.2L13 4.8" stroke="#00B3DC" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span><b>Ongoing support for the full term.</b> Not a handover at go-live. We stay involved for the twelve months, not just the fortnight after signing.</span></li>
       </ul>
       <div class="plan-foot">
@@ -874,6 +937,16 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
 </footer>
 
 <script>
+/* ═══ TOOLS MARQUEE ═══ */
+const T1=[['Meta Ads','#0866FF'],['TikTok Ads','#111213'],['LinkedIn Ads','#0A66C2'],['Google Ads','#EA4335'],['Apple Search Ads','#111213'],['AppsFlyer','#00B0F0'],['Adjust','#8E5CF7'],['Braze','#FF6B4A'],['Iterable','#5F2EEA'],['Customer.io','#7C3AED'],['Mailchimp','#FFE01B'],['Reddit Ads','#FF4500'],['Pinterest Ads','#E60023'],['Snapchat Ads','#FFFC00']];
+const T2=[['App Store Connect','#0D96F6'],['Google Play Console','#00A173'],['RevenueCat','#F2545B'],['Amplitude','#1E61F0'],['Mixpanel','#7856FF'],['GA4','#E37400'],['Snowflake','#29B5E8'],['BigQuery','#4285F4'],['Looker','#5F6CAF'],['Stripe','#635BFF'],['HubSpot','#FF7A59'],['Salesforce','#00A1E0'],['Zendesk','#03363D'],['Intercom','#1F8DED'],['Slack','#4A154B'],['Notion','#111213'],['Jira','#2684FF'],['Google Sheets','#0F9D58'],['Eventbrite','#F05537']];
+function fillMq(id,items){
+  const el=document.getElementById(id);if(!el)return;
+  const html=items.map(([n,c])=>'<span class="tool"><i style="background:'+c+'"></i>'+n+'</span>').join('');
+  el.innerHTML=html+html; // duplicated for a seamless -50% loop
+}
+fillMq('mq1',T1);fillMq('mq2',T2);
+
 /* ═══ DEMO ═══ */
 const DEMO=[
 {k:'Paid channels',q:'Across Facebook, TikTok and LinkedIn, where should next month’s budget actually go?',
@@ -898,7 +971,7 @@ const DEMO=[
 
 {k:'Automate it',q:'Send the marketing leads a summary of all of this every Monday at 8am, in their own time zone.',
  a:'Done. Scheduled and live. Every recipient gets it at <b>08:00 local</b>, so nobody reads Friday’s numbers on Tuesday. I’ll include the channel split, event performance and segment growth, and I’ll flag anything that moves more than 15% week on week rather than making you look for it.',
- c:{t:'Scheduled for Monday 08:00 local',list:['Head of Marketing · Barcelona, 08:00 CET','Head of Growth · Bangkok, 08:00 ICT','Min, COO · Hong Kong, 08:00 HKT','Brand & Design · London, 08:00 BST']},
+ c:{t:'Scheduled for Monday 08:00 local',list:['Head of Marketing · Barcelona, 08:00 CET','Head of Growth · 08:00 local','Min, COO · Hong Kong, 08:00 HKT','Brand & Design · London, 08:00 BST']},
  i:'That is the weekly data sync, minus the meeting. Any question you ask twice can become a scheduled report or a saved dashboard, with no request, no ticket and no analyst in the loop.'}
 ];
 
@@ -933,15 +1006,15 @@ const DEPTS=[
  ['What did we spend per acquisition across all three platforms last month, by segment?','One table, three platforms, split by B2B, education and consumer. The comparison that currently takes a day to assemble by hand.'],
  ['Is the weekly sync telling us anything the numbers didn’t already say?','The summary arrives at 08:00 Monday before the meeting, so the meeting becomes a decision rather than a readout.']]},
 
-{n:'Growth',who:'Head of Growth',loc:'Thailand',
- d:'Sitting seven hours ahead of London and eight behind nobody who matters, which today means waiting on other people’s working hours to get a number.',
+{n:'Growth',who:'Head of Growth',loc:'Regional',
+ d:'Working well ahead of London, which today means waiting on other people’s office hours to get a number that already exists.',
  rows:[
  ['Where is our cheapest acquisition right now, and is that changing?','Cost per install by region and channel with the six-week trend, so a rising cost gets caught while it’s still cheap to fix.'],
  ['Which markets are converting without any paid support at all?','Organic strength by market: the fifteen years of word of mouth, made visible, so paid budget goes where it’s actually needed.'],
  ['Did the Samsung channel move anything measurable?','Install and retention performance isolated to that channel, ready for the moment the partnership restarts.']]},
 
 {n:'Operations',who:'Min, COO',loc:'Hong Kong',
- d:'Needs one picture across six locations and three audience lines, in time for an off-site where next year’s projections are on the agenda.',
+ d:'Needs one picture across five locations and three audience lines, in time for an off-site where next year’s projections are on the agenda.',
  rows:[
  ['Give me one view of company performance across every market and segment.','A single dashboard that doesn’t require anyone to reconcile three spreadsheets first, and reads the same in Hong Kong as it does in Barcelona.'],
  ['What are we spending per acquired user, all-in, across paid and events?','Blended acquisition cost including the event programme: the number that belongs in a projection and currently doesn’t exist.'],
