@@ -174,7 +174,7 @@ h1 .ln:nth-child(2)>span{animation-delay:.22s}
 .tchip.hot i{background:var(--cyan)}
 .tchip.soon{border-style:dashed;color:var(--ink-50)}
 .tchip.soon i{background:transparent;border:1px solid var(--ink-25)}
-.tag{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:5px;margin-left:2px}
+.tag{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:5px;margin-left:2px;white-space:nowrap}
 .tag.n{background:var(--cyan);color:#04202A}
 .tag.b{background:var(--canary);color:#4A3B00}
 .tag.s{background:var(--rule);color:var(--ink-50)}
@@ -182,6 +182,7 @@ h1 .ln:nth-child(2)>span{animation-delay:.22s}
 .lg{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;color:var(--ink-50)}
 .lg i{width:7px;height:7px;border-radius:2px;flex-shrink:0;font-style:normal;background:var(--cyan)}
 .lg.b i{background:transparent;border:1px dashed var(--ink-25)}
+.lg.g i{background:var(--rule);border-radius:3px;width:14px;height:9px}
 
 /* ── Q&A ───────────────────────────────────────────────────────────────────── */
 .qa{display:flex;flex-direction:column;gap:16px}
@@ -519,6 +520,7 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
     <div class="legend reveal d1">
       <span class="lg"><i></i>Native connector today (36)</span>
       <span class="lg b"><i></i>In place during the pilot, free (4)</span>
+      <span class="lg g"><i></i>Grey labels are your channel plan, not connector status</span>
     </div>
     <div class="stackgrid reveal d2" id="stackgrid"></div>
     <div class="tools-foot reveal d2" style="margin-top:22px">
@@ -956,7 +958,7 @@ const STACK=[
  ['Voice of customer',[['Sprig',''],['UserVoice',''],['Zendesk',''],['Typeform','']]],
  ['Workflow',[['Notion',''],['Slack',''],['Jira',''],['Zapier','']]]
 ];
-const TAGS={n:['n','Native'],b:['b','Built in the pilot'],s:['s','Testing into'],h:['s','Largest channel']};
+const TAGS={n:['n','Native'],b:['b','In the pilot'],s:['s','Your test plan'],h:['s','Your largest channel']};
 // category grid
 (function(){
   const g=document.getElementById('stackgrid');if(!g)return;
