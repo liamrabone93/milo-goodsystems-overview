@@ -160,6 +160,40 @@ h1 .ln:nth-child(2)>span{animation-delay:.22s}
 .tools-foot p b{color:var(--ink);font-weight:600}
 @media(prefers-reduced-motion:reduce){.mq-track{animation:none}.marquee{-webkit-mask-image:none;mask-image:none}.mq-track{flex-wrap:wrap;width:auto}}
 
+/* ── Stack grid ────────────────────────────────────────────────────────────── */
+.stackgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px;align-items:start}
+@media(max-width:900px){.stackgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:620px){.stackgrid{grid-template-columns:1fr}}
+.cat{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:20px 19px;transition:border-color .25s,transform .25s var(--ease)}
+.cat:hover{border-color:var(--ink-25);transform:translateY(-2px)}
+.cat h5{font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-50);margin-bottom:13px}
+.cat-tools{display:flex;flex-wrap:wrap;gap:6px}
+.tchip{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:5px 9px;font-size:.79rem;font-weight:500;color:var(--ink-75);line-height:1.3}
+.tchip i{width:6px;height:6px;border-radius:2px;flex-shrink:0;font-style:normal;background:var(--ink-25)}
+.tchip.hot{border-color:rgba(0,179,220,.42);background:rgba(0,179,220,.06);color:var(--ink)}
+.tchip.hot i{background:var(--cyan)}
+.tchip.soon{border-style:dashed;color:var(--ink-50)}
+.tchip.soon i{background:transparent;border:1px solid var(--ink-25)}
+.tag{font-size:.6rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:5px;margin-left:2px}
+.tag.n{background:var(--cyan);color:#04202A}
+.tag.b{background:var(--canary);color:#4A3B00}
+.tag.s{background:var(--rule);color:var(--ink-50)}
+
+/* ── Q&A ───────────────────────────────────────────────────────────────────── */
+.qa{display:flex;flex-direction:column;gap:16px}
+.qitem{background:var(--card);border:1px solid var(--rule);border-radius:18px;padding:28px 30px;position:relative}
+.qitem.key{border-color:rgba(0,179,220,.4);background:linear-gradient(180deg,rgba(0,179,220,.045),transparent 60%)}
+.qflag{display:inline-block;font-size:.63rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan-dark);background:rgba(0,179,220,.1);border:1px solid rgba(0,179,220,.28);border-radius:999px;padding:3px 10px;margin-bottom:13px}
+.qq2{display:flex;gap:13px;align-items:flex-start;margin-bottom:15px}
+.qmark{flex-shrink:0;width:23px;height:23px;border-radius:7px;background:var(--ink);color:var(--paper);display:flex;align-items:center;justify-content:center;font-size:.7rem;font-weight:600;margin-top:1px}
+.qq2 p{font-size:1rem;font-weight:500;color:var(--ink);line-height:1.5;letter-spacing:-.012em}
+.qa2{display:flex;gap:13px;align-items:flex-start}
+.qa2 .qmark{background:linear-gradient(135deg,var(--milo-a),var(--milo-b));font-family:'Baloo 2',sans-serif;font-weight:800}
+.qa2 p{font-size:.92rem;color:var(--ink-75);line-height:1.68}
+.qa2 p+p{margin-top:11px}
+.qa2 p b{color:var(--ink);font-weight:600}
+@media(max-width:640px){.qitem{padding:24px 22px}}
+
 /* ── Note / letter ─────────────────────────────────────────────────────────── */
 .letter{background:var(--card);border:1px solid var(--rule);border-radius:20px;padding:46px 48px;position:relative;box-shadow:0 1px 2px rgba(17,18,19,.03),0 12px 34px rgba(17,18,19,.035)}
 .letter::before{content:'';position:absolute;left:0;top:26px;bottom:26px;width:3px;background:var(--canary);border-radius:0 3px 3px 0}
@@ -415,10 +449,11 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
       <img class="gs-mark" src="https://cdn.prod.website-files.com/6a6a23376193097ce01d7700/6a74b927b098f9b68a441e73_good-systems-logo-hz.svg" alt="Good Systems"/>
     </div>
     <div class="nav-links">
-      <a href="#thesis">Thesis</a>
+      <a href="#tools">Your stack</a>
       <a href="#demo">Live demo</a>
       <a href="#pillars">Where it fits</a>
       <a href="#buildbuy">Build vs buy</a>
+      <a href="#questions">Q&amp;A</a>
       <a href="#poc">The pilot</a>
       <a class="nav-cta" href="#cta">Book the call</a>
     </div>
@@ -480,18 +515,19 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
 <!-- ══ TOOLS ══ -->
 <section id="tools">
   <div class="wrap">
-    <div class="tools-head reveal">
-      <span class="eyebrow" style="display:block;margin-bottom:11px">What it plugs into</span>
-      <h3>It connects to the tools you already run.</h3>
-      <p>Ad platforms, app stores, attribution, product analytics, billing, your warehouse. A sample of what we connect to, and we build any that are missing.</p>
+    <div class="tools-head reveal" style="max-width:700px">
+      <span class="eyebrow" style="display:block;margin-bottom:11px">Your stack</span>
+      <h3>Forty tools. We connect to all of them.</h3>
+      <p>You sent the list across departments, so this is your actual stack rather than a sample. Most are native connectors today. Anything that isn't, we build during the pilot, usually in one to two days, at no extra cost.</p>
     </div>
   </div>
   <div class="marquee reveal d1" style="--dur:56s"><div class="mq-track" id="mq1"></div></div>
   <div class="marquee reveal d1" style="--dur:68s;margin-top:10px"><div class="mq-track rev" id="mq2"></div></div>
   <div class="wrap">
-    <div class="tools-foot reveal d2">
+    <div class="stackgrid reveal d2" id="stackgrid"></div>
+    <div class="tools-foot reveal d2" style="margin-top:22px">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="6.4" stroke="#00B3DC" stroke-width="1.4"/><path d="M8 5.2v.1M8 7.4v3.4" stroke="#00B3DC" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <p>These are examples, not an audit of your stack. <b>Send me the list of tools across departments</b> and I'll mark up exactly which of them we connect on day one, and which we build for you during the pilot.</p>
+      <p><b>Snowflake is a native integration</b>, so your warehouse is connected on day one rather than at the end of a project. <b>Brandwatch we build for you during the pilot</b>, free, because we would rather write a connector than ask anyone to import a CSV.</p>
     </div>
   </div>
 </section>
@@ -672,6 +708,39 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
   </div>
 </section>
 
+<!-- ══ QUESTIONS ══ -->
+<section id="questions" class="sec">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">From your team</span>
+      <h2>The four questions you sent back.</h2>
+      <p class="lead">Answered here rather than on the call, so the people who raised them can read the answers without waiting for a meeting to be scheduled across five offices.</p>
+    </div>
+    <div class="qa">
+      <div class="qitem key reveal">
+        <span class="qflag">You said this one matters</span>
+        <div class="qq2"><div class="qmark">Q</div><p>Does Milo respect Snowflake's role-based access controls, or does it query as a single service account?</p></div>
+        <div class="qa2"><div class="qmark">M</div><div><p>Both are possible, but <b>role-based access control is the default</b>. Milo is built so people only see the data they are permitted to see, row-level security included.</p><p>That means last week's company-wide RBAC rollout carries straight through rather than being flattened into one service account. If you ever decide you want a single service account instead, that is a configuration choice rather than a rebuild.</p></div></div>
+      </div>
+      <div class="qitem reveal">
+        
+        <div class="qq2"><div class="qmark">Q</div><p>Is there a native Brandwatch connector, or is it CSV import?</p></div>
+        <div class="qa2"><div class="qmark">M</div><div><p>A native connector. It does not exist yet, so <b>we would build it for you during the four weeks, free.</b></p><p>We do not rely on CSV import for anything. If a connector does not exist yet we write one, usually in one to two days, and it is included in the proof of concept rather than quoted separately. Brandwatch is the clearest example on your list.</p></div></div>
+      </div>
+      <div class="qitem reveal">
+        
+        <div class="qq2"><div class="qmark">Q</div><p>Where would unstructured data live? We run events globally, and have no system of record for them at all.</p></div>
+        <div class="qa2"><div class="qmark">M</div><div><p>Milo ingests unstructured data directly, pushed in through Google Drive, email and other routes, so the events programme gets a system of record it does not currently have.</p><p>This is the one item on your list where Milo is not replacing a tool but <b>filling a gap</b>, which also makes it the easiest thing to judge during the pilot. There is no incumbent to compare it against, so cafe takeovers, campus tours and press events either become answerable alongside paid spend or they do not.</p></div></div>
+      </div>
+      <div class="qitem reveal">
+        
+        <div class="qq2"><div class="qmark">Q</div><p>How does Milo sit alongside Tableau and Hex rather than duplicating them? Our Insights team will ask.</p></div>
+        <div class="qa2"><div class="qmark">M</div><div><p>Honestly, there is overlap, and it would be strange to pretend otherwise. The difference is that Milo brings its own data platform: it combines sources that are currently isolated, then makes the result answerable in plain English by anyone.</p><p>Nothing has to be switched off. <b>Run all three in parallel through the pilot</b> and let the Insights team judge it on use rather than on a pitch. Our experience is that teams stop reaching for Tableau and Hex over time, but that should be their conclusion after four weeks, not a migration you commit to up front.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ BUILD VS BUY ══ -->
 <section id="buildbuy" class="sec dotgrid" style="background-color:#fff;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)">
   <div class="wrap">
@@ -825,8 +894,8 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
           <div class="tl-wk">Week 1</div>
           <div class="tl-body">
             <h4>Connect</h4>
-            <p>You send the list of tools across departments. I'll chase that separately. We connect the paid channels first because that's where the pressure is.</p>
-            <ul><li>Facebook, TikTok and LinkedIn ad accounts live</li><li>Your analytics team in the room from day one, not handed a finished thing</li><li>First questions answered before the week is out</li></ul>
+            <p>Your stack is already mapped, so week one is connection rather than discovery. Snowflake and the paid channels go in first, because that is where the pressure is.</p>
+            <ul><li>Snowflake connected natively, with your RBAC respected</li><li>Apple Search Ads, Google, Meta and LinkedIn live</li><li>Your Insights team in the room from day one, not handed a finished thing</li></ul>
           </div>
         </div>
         <div class="tl-item">
@@ -834,7 +903,7 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
           <div class="tl-body">
             <h4>Widen</h4>
             <p>Events data alongside paid, covering the cafe takeovers and the US programme, so spend can finally be compared across channels that have never shared a table.</p>
-            <ul><li>Event and campaign data in the same view</li><li>Segment splits for B2B, education and consumer</li><li>Persistent dashboards built by the people who'll use them</li></ul>
+            <ul><li>Brandwatch connector built for you, free</li><li>Event data ingested, giving the programme its first system of record</li><li>Persistent dashboards built by the people who'll use them</li></ul>
           </div>
         </div>
         <div class="tl-item">
@@ -890,10 +959,10 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
   <div class="wrap">
     <span class="eyebrow reveal"><span class="dot"></span>Over to you</span>
     <h2 class="reveal d1">Thirty minutes, your data, your questions, ahead of the off-site.</h2>
-    <p class="lead reveal d2">Send me the list of tools across departments and I'll have the workspace shaped before we speak. If the answer after four weeks is &ldquo;we'll build it&rdquo;, you'll have a far better specification than you have today.</p>
+    <p class="lead reveal d2">Your stack is mapped and your questions are answered above. What's left is thirty minutes against a live workspace. If the answer after four weeks is &ldquo;we'll build it&rdquo;, you'll have a far better specification than you have today.</p>
     <div class="btns reveal d3">
       <a class="btn btn-p" href="mailto:liam@milo.ai?subject=Milo%20%C3%97%20Good%20Systems%20%E2%80%94%20booking%20the%20call">Book the call<svg width="15" height="15" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-      <a class="btn btn-s" href="mailto:liam@milo.ai?subject=Good%20Systems%20%E2%80%94%20tool%20list%20for%20the%20pilot">Send the tool list</a>
+      <a class="btn btn-s" href="#questions">Re-read the answers</a>
     </div>
     <p class="hand reveal d3" style="margin-top:38px;font-size:1.15rem;color:var(--ink-50)">No slides. Just the workspace and whatever you want to ask it.</p>
   </div>
@@ -918,14 +987,41 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
 
 <script>
 /* ═══ TOOLS MARQUEE ═══ */
-const T1=[['Meta Ads','#0866FF'],['TikTok Ads','#111213'],['LinkedIn Ads','#0A66C2'],['Google Ads','#EA4335'],['Apple Search Ads','#111213'],['AppsFlyer','#00B0F0'],['Adjust','#8E5CF7'],['Braze','#FF6B4A'],['Iterable','#5F2EEA'],['Customer.io','#7C3AED'],['Mailchimp','#FFE01B'],['Reddit Ads','#FF4500'],['Pinterest Ads','#E60023'],['Snapchat Ads','#FFFC00']];
-const T2=[['App Store Connect','#0D96F6'],['Google Play Console','#00A173'],['RevenueCat','#F2545B'],['Amplitude','#1E61F0'],['Mixpanel','#7856FF'],['GA4','#E37400'],['Snowflake','#29B5E8'],['BigQuery','#4285F4'],['Looker','#5F6CAF'],['Stripe','#635BFF'],['HubSpot','#FF7A59'],['Salesforce','#00A1E0'],['Zendesk','#03363D'],['Intercom','#1F8DED'],['Slack','#4A154B'],['Notion','#111213'],['Jira','#2684FF'],['Google Sheets','#0F9D58'],['Eventbrite','#F05537']];
-function fillMq(id,items){
-  const el=document.getElementById(id);if(!el)return;
-  const html=items.map(([n,c])=>'<span class="tool"><i style="background:'+c+'"></i>'+n+'</span>').join('');
-  el.innerHTML=html+html; // duplicated for a seamless -50% loop
-}
-fillMq('mq1',T1);fillMq('mq2',T2);
+const STACK=[
+ ['Data infrastructure',[['Snowflake','n'],['dbt',''],['Tableau',''],['Hex','']]],
+ ['Paid acquisition',[['Apple Search Ads','h'],['Google Ads',''],['Meta Ads',''],['LinkedIn Ads',''],['Reddit Ads','s'],['TikTok Ads','s'],['Pinterest Ads','s'],['Snapchat Ads','s']]],
+ ['Attribution and app stores',[['AppsFlyer',''],['App Store Connect',''],['Google Play Console',''],['Microsoft Store','']]],
+ ['CRM and lifecycle',[['Braze',''],['HubSpot',''],['Mandrill',''],['Mailchimp','']]],
+ ['Product and experimentation',[['Amplitude',''],['Statsig','']]],
+ ['Revenue',[['RevenueCat',''],['Stripe','']]],
+ ['Web, SEO and AEO',[['Google Analytics',''],['Google Search Console',''],['Ahrefs',''],['Profound',''],['Webflow','']]],
+ ['Social and brand',[['Brandwatch','b']]],
+ ['Market and competitor intelligence',[['Sensor Tower',''],['AppFigures','']]],
+ ['Voice of customer',[['Sprig',''],['UserVoice',''],['Zendesk',''],['Typeform','']]],
+ ['Workflow',[['Notion',''],['Slack',''],['Jira',''],['Zapier','']]]
+];
+const TAGS={n:['n','Native'],b:['b','Built in the pilot'],s:['s','Testing into'],h:['n','Largest channel']};
+// category grid
+(function(){
+  const g=document.getElementById('stackgrid');if(!g)return;
+  g.innerHTML=STACK.map(([cat,tools])=>{
+    const chips=tools.map(([name,k])=>{
+      const cls=k==='n'||k==='h'?' hot':(k==='s'?' soon':'');
+      const tag=k&&TAGS[k]?'<span class="tag '+TAGS[k][0]+'">'+TAGS[k][1]+'</span>':'';
+      return '<span class="tchip'+cls+'"><i></i>'+name+tag+'</span>';
+    }).join('');
+    return '<div class="cat"><h5>'+cat+'</h5><div class="cat-tools">'+chips+'</div></div>';
+  }).join('');
+})();
+// marquee rows, built from the same real stack
+(function(){
+  const flat=STACK.flatMap(([,t])=>t.map(x=>x[0]));
+  const half=Math.ceil(flat.length/2);
+  const mk=(el,items)=>{const h=items.map(n=>'<span class="tool"><i style="background:#00B3DC"></i>'+n+'</span>').join('');el.innerHTML=h+h;};
+  const a=document.getElementById('mq1'),b=document.getElementById('mq2');
+  if(a)mk(a,flat.slice(0,half));
+  if(b)mk(b,flat.slice(half));
+})();
 
 /* ═══ DEMO ═══ */
 const DEMO=[
