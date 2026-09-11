@@ -169,7 +169,7 @@ h1 .ln:nth-child(2)>span{animation-delay:.22s}
 .cat h5{font-size:.68rem;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-50);margin-bottom:13px}
 .cat-tools{display:flex;flex-wrap:wrap;gap:6px}
 .tchip{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:5px 9px;font-size:.79rem;font-weight:500;color:var(--ink-75);line-height:1.3}
-.tchip i{width:6px;height:6px;border-radius:2px;flex-shrink:0;font-style:normal;background:var(--ink-25)}
+.tchip i{width:6px;height:6px;border-radius:2px;flex-shrink:0;font-style:normal;background:var(--cyan)}
 .tchip.hot{border-color:rgba(0,179,220,.42);background:rgba(0,179,220,.06);color:var(--ink)}
 .tchip.hot i{background:var(--cyan)}
 .tchip.soon{border-style:dashed;color:var(--ink-50)}
@@ -178,6 +178,10 @@ h1 .ln:nth-child(2)>span{animation-delay:.22s}
 .tag.n{background:var(--cyan);color:#04202A}
 .tag.b{background:var(--canary);color:#4A3B00}
 .tag.s{background:var(--rule);color:var(--ink-50)}
+.legend{display:flex;gap:20px;flex-wrap:wrap;margin-top:26px;padding-bottom:2px}
+.lg{display:inline-flex;align-items:center;gap:8px;font-size:.78rem;color:var(--ink-50)}
+.lg i{width:7px;height:7px;border-radius:2px;flex-shrink:0;font-style:normal;background:var(--cyan)}
+.lg.b i{background:transparent;border:1px dashed var(--ink-25)}
 
 /* ── Q&A ───────────────────────────────────────────────────────────────────── */
 .qa{display:flex;flex-direction:column;gap:16px}
@@ -517,17 +521,21 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
   <div class="wrap">
     <div class="tools-head reveal" style="max-width:700px">
       <span class="eyebrow" style="display:block;margin-bottom:11px">Your stack</span>
-      <h3>Forty tools. We connect to all of them.</h3>
-      <p>You sent the list across departments, so this is your actual stack rather than a sample. Most are native connectors today. Anything that isn't, we build during the pilot, usually in one to two days, at no extra cost.</p>
+      <h3>Forty tools. Thirty-seven connect natively.</h3>
+      <p>You sent the list across departments, so this is your actual stack rather than a sample. Thirty-seven of the forty are native connectors today, Snowflake and Brandwatch included. The three that are not, we build during the pilot, free.</p>
     </div>
   </div>
   <div class="marquee reveal d1" style="--dur:56s"><div class="mq-track" id="mq1"></div></div>
   <div class="marquee reveal d1" style="--dur:68s;margin-top:10px"><div class="mq-track rev" id="mq2"></div></div>
   <div class="wrap">
+    <div class="legend reveal d1">
+      <span class="lg"><i></i>Native connector today (37)</span>
+      <span class="lg b"><i></i>Built for you during the pilot, free (3)</span>
+    </div>
     <div class="stackgrid reveal d2" id="stackgrid"></div>
     <div class="tools-foot reveal d2" style="margin-top:22px">
       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="flex-shrink:0;margin-top:2px"><circle cx="8" cy="8" r="6.4" stroke="#00B3DC" stroke-width="1.4"/><path d="M8 5.2v.1M8 7.4v3.4" stroke="#00B3DC" stroke-width="1.6" stroke-linecap="round"/></svg>
-      <p><b>Snowflake is a native integration</b>, so your warehouse is connected on day one rather than at the end of a project. <b>Brandwatch we build for you during the pilot</b>, free, because we would rather write a connector than ask anyone to import a CSV.</p>
+      <p><b>Snowflake is native</b>, so your warehouse is connected on day one rather than at the end of a project. The only three we do not support yet are <b>Microsoft Store, Statsig and Profound</b>, and we build those during the pilot at no cost, usually in one to two days each. We would rather write a connector than ask anyone to import a CSV.
     </div>
   </div>
 </section>
@@ -725,7 +733,7 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
       <div class="qitem reveal">
         
         <div class="qq2"><div class="qmark">Q</div><p>Is there a native Brandwatch connector, or is it CSV import?</p></div>
-        <div class="qa2"><div class="qmark">M</div><div><p>A native connector. It does not exist yet, so <b>we would build it for you during the four weeks, free.</b></p><p>We do not rely on CSV import for anything. If a connector does not exist yet we write one, usually in one to two days, and it is included in the proof of concept rather than quoted separately. Brandwatch is the clearest example on your list.</p></div></div>
+        <div class="qa2"><div class="qmark">M</div><div><p>Native, and it already exists. <b>Brandwatch is a supported connector today</b>, so social listening, sentiment and influencer discovery land in the same workspace as paid spend from week one, across global and local-language markets.</p><p>We never rely on CSV import for anything. Checking your list properly, three tools are not supported yet: <b>Microsoft Store, Statsig and Profound</b>. We build those during the pilot, free, usually in one to two days each.</p></div></div>
       </div>
       <div class="qitem reveal">
         
@@ -903,7 +911,7 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
           <div class="tl-body">
             <h4>Widen</h4>
             <p>Events data alongside paid, covering the cafe takeovers and the US programme, so spend can finally be compared across channels that have never shared a table.</p>
-            <ul><li>Brandwatch connector built for you, free</li><li>Event data ingested, giving the programme its first system of record</li><li>Persistent dashboards built by the people who'll use them</li></ul>
+            <ul><li>Microsoft Store, Statsig and Profound connectors built, free</li><li>Event data ingested, giving the programme its first system of record</li><li>Persistent dashboards built by the people who'll use them</li></ul>
           </div>
         </div>
         <div class="tl-item">
@@ -990,23 +998,23 @@ footer{border-top:1px solid var(--rule);padding:46px 0 56px;background:var(--car
 const STACK=[
  ['Data infrastructure',[['Snowflake','n'],['dbt',''],['Tableau',''],['Hex','']]],
  ['Paid acquisition',[['Apple Search Ads','h'],['Google Ads',''],['Meta Ads',''],['LinkedIn Ads',''],['Reddit Ads','s'],['TikTok Ads','s'],['Pinterest Ads','s'],['Snapchat Ads','s']]],
- ['Attribution and app stores',[['AppsFlyer',''],['App Store Connect',''],['Google Play Console',''],['Microsoft Store','']]],
+ ['Attribution and app stores',[['AppsFlyer',''],['App Store Connect',''],['Google Play Console',''],['Microsoft Store','b']]],
  ['CRM and lifecycle',[['Braze',''],['HubSpot',''],['Mandrill',''],['Mailchimp','']]],
- ['Product and experimentation',[['Amplitude',''],['Statsig','']]],
+ ['Product and experimentation',[['Amplitude',''],['Statsig','b']]],
  ['Revenue',[['RevenueCat',''],['Stripe','']]],
- ['Web, SEO and AEO',[['Google Analytics',''],['Google Search Console',''],['Ahrefs',''],['Profound',''],['Webflow','']]],
- ['Social and brand',[['Brandwatch','b']]],
+ ['Web, SEO and AEO',[['Google Analytics',''],['Google Search Console',''],['Ahrefs',''],['Profound','b'],['Webflow','']]],
+ ['Social and brand',[['Brandwatch','n']]],
  ['Market and competitor intelligence',[['Sensor Tower',''],['AppFigures','']]],
  ['Voice of customer',[['Sprig',''],['UserVoice',''],['Zendesk',''],['Typeform','']]],
  ['Workflow',[['Notion',''],['Slack',''],['Jira',''],['Zapier','']]]
 ];
-const TAGS={n:['n','Native'],b:['b','Built in the pilot'],s:['s','Testing into'],h:['n','Largest channel']};
+const TAGS={n:['n','Native'],b:['b','Built in the pilot'],s:['s','Testing into'],h:['s','Largest channel']};
 // category grid
 (function(){
   const g=document.getElementById('stackgrid');if(!g)return;
   g.innerHTML=STACK.map(([cat,tools])=>{
     const chips=tools.map(([name,k])=>{
-      const cls=k==='n'||k==='h'?' hot':(k==='s'?' soon':'');
+      const cls=k==='b'?' soon':(k==='n'?' hot':'');
       const tag=k&&TAGS[k]?'<span class="tag '+TAGS[k][0]+'">'+TAGS[k][1]+'</span>':'';
       return '<span class="tchip'+cls+'"><i></i>'+name+tag+'</span>';
     }).join('');
